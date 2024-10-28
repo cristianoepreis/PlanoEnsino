@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     @if (planoEnsino(); as planoEnsinoRef) {
-      <div>
-        <h2 data-cy="planoEnsinoDetailsHeading"><span jhiTranslate="sistemaEscolarApp.planoEnsino.detail.title">Plano Ensino</span></h2>
+    <div>
+      <h2 data-cy="planoEnsinoDetailsHeading"><span jhiTranslate="sistemaEscolarApp.planoEnsino.detail.title">Plano de Ensino</span></h2>
 
         <hr />
 
@@ -16,39 +16,47 @@
             <span>{{ planoEnsinoRef.id }}</span>
           </dd>
           <dt><span jhiTranslate="sistemaEscolarApp.planoEnsino.ementa">Ementa</span></dt>
-          <dd>
-            <span>{{ planoEnsinoRef.ementa }}</span>
+          <dd class="mb-3">
+            <div class="form-floating">
+              <textarea class="form-control" id="ementaTextarea">{{ planoEnsinoRef.ementa }}</textarea>
+            </div>
           </dd>
           <dt><span jhiTranslate="sistemaEscolarApp.planoEnsino.bibliografiaBasica">Bibliografia Basica</span></dt>
-          <dd>
-            <span>{{ planoEnsinoRef.bibliografiaBasica }}</span>
+          <dd class="mb-3">
+            <div class="form-floating">
+              <textarea class="form-control" id="basicafloatingTextarea">{{ planoEnsinoRef.bibliografiaBasica }}</textarea>
+            </div>
           </dd>
           <dt><span jhiTranslate="sistemaEscolarApp.planoEnsino.bibliografiaComplementar">Bibliografia Complementar</span></dt>
-          <dd>
-            <span>{{ planoEnsinoRef.bibliografiaComplementar }}</span>
+          <dd class="mb-3">
+            <div class="form-floating">
+              <textarea class="form-control"  id="complementarTextarea">{{ planoEnsinoRef.bibliografiaComplementar }}</textarea>
+            </div>
           </dd>
           <dt><span jhiTranslate="sistemaEscolarApp.planoEnsino.praticaLaboratorial">Pratica Laboratorial</span></dt>
-          <dd>
-            <span>{{ planoEnsinoRef.praticaLaboratorial }}</span>
+          <dd class="mb-3">
+            <div class="form-floating">
+              <textarea class="form-control"  id="praticaTextarea">{{ planoEnsinoRef.praticaLaboratorial }}</textarea>
+            </div>
           </dd>
           <dt><span jhiTranslate="sistemaEscolarApp.planoEnsino.disciplina">Disciplina</span></dt>
-          <dd>
-            @if (planoEnsino()!.disciplina) {
-              <div>
-                <a [routerLink]="['/disciplina', planoEnsino()!.disciplina?.nome, 'view']">{{ planoEnsinoRef.disciplina?.nome }}</a>
-              </div>
-            }
-          </dd>
+            <dd>
+              @if (planoEnsino()!.disciplina) {
+                <div>
+                  <a [routerLink]="['/disciplina', planoEnsino()!.disciplina?.nome, 'view']">{{ planoEnsinoRef.disciplina?.nome }}</a>
+                </div>
+              }
+            </dd>
           <dt><span jhiTranslate="sistemaEscolarApp.planoEnsino.professorResponsavel">Professor Responsavel</span></dt>
-          <dd>
-            @if (planoEnsino()!.professorResponsavel) {
-              <div>
-                <a [routerLink]="['/professor', planoEnsino()!.professorResponsavel?.nome, 'view']">{{
-                  planoEnsinoRef.professorResponsavel?.nome
-                }}</a>
-              </div>
-            }
-          </dd>
+            <dd>
+              @if (planoEnsino()!.professorResponsavel) {
+                <div>
+                  <a [routerLink]="['/professor', planoEnsino()!.professorResponsavel?.nome, 'view']">{{
+                    planoEnsinoRef.professorResponsavel?.nome
+                  }}</a>
+                </div>
+              }
+            </dd>
         </dl>
 
         <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

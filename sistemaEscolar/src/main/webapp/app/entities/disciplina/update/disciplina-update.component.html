@@ -42,7 +42,7 @@
             >Professor Responsavel</label
           >
           <select
-            class="form-control"
+            class="form-select"
             id="field_professorResponsavel"
             data-cy="professorResponsavel"
             name="professorResponsavel"
@@ -51,7 +51,7 @@
           >
             <option [ngValue]="null"></option>
             @for (professorOption of professorsSharedCollection; track $index) {
-              <option [ngValue]="professorOption">{{ professorOption.id }}</option>
+              <option [ngValue]="professorOption">{{ professorOption.nome }}</option>
             }
           </select>
         </div>
@@ -59,7 +59,7 @@
         <div class="mb-3">
           <label for="field_cursos" jhiTranslate="sistemaEscolarApp.disciplina.curso">Curso</label>
           <select
-            class="form-control"
+            class="form-select"
             id="field_cursos"
             data-cy="curso"
             multiple
@@ -68,7 +68,7 @@
             [compareWith]="compareCurso"
           >
             @for (cursoOption of cursosSharedCollection; track $index) {
-              <option [ngValue]="cursoOption">{{ cursoOption.id }}</option>
+              <option [ngValue]="cursoOption">{{ cursoOption.nome }}</option>
             }
           </select>
         </div>

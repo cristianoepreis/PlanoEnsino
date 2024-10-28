@@ -2,20 +2,20 @@
   "sistemaEscolarApp": {
     "planoEnsino": {
       "home": {
-        "title": "Plano Ensinos",
+        "title": "Plano ce Ensinos",
         "refreshListLabel": "Refresh list",
-        "createLabel": "Create a new Plano Ensino",
-        "createOrEditLabel": "Create or edit a Plano Ensino",
-        "notFound": "No Plano Ensinos found"
+        "createLabel": "Create a new Plano de Ensino",
+        "createOrEditLabel": "Create or edit a Plano de Ensino",
+        "notFound": "No Plano de Ensinos found"
       },
-      "created": "A new Plano Ensino is created with identifier {{ param }}",
-      "updated": "A Plano Ensino is updated with identifier {{ param }}",
-      "deleted": "A Plano Ensino is deleted with identifier {{ param }}",
+      "created": "A new Plano de Ensino is created with identifier {{ param }}",
+      "updated": "A Plano de Ensino is updated with identifier {{ param }}",
+      "deleted": "A Plano de Ensino is deleted with identifier {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Plano Ensino {{ id }}?"
+        "question": "Are you sure you want to delete Plano de Ensino {{ id }}?"
       },
       "detail": {
-        "title": "Plano Ensino"
+        "title": "Plano de Ensino"
       },
       "id": "ID",
       "ementa": "Ementa",

@@ -6,7 +6,7 @@
         data-cy="PlanoEnsinoCreateUpdateHeading"
         jhiTranslate="sistemaEscolarApp.planoEnsino.home.createOrEditLabel"
       >
-        Criar ou editar Plano Ensino
+        Criar ou editar Plano de Ensino
       </h2>
 
       <div>
@@ -42,14 +42,17 @@
           <label class="form-label" for="field_bibliografiaBasica" jhiTranslate="sistemaEscolarApp.planoEnsino.bibliografiaBasica"
             >Bibliografia Basica</label
           >
-          <input
-            type="text"
-            class="form-control"
-            name="bibliografiaBasica"
-            id="field_bibliografiaBasica"
-            data-cy="bibliografiaBasica"
-            formControlName="bibliografiaBasica"
-          />
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              name="bibliografiaBasica"
+              id="field_bibliografiaBasica"
+              data-cy="bibliografiaBasica"
+              formControlName="bibliografiaBasica"
+              placeholder="Leave a comment here">
+            </textarea>
+          </div>
+
           @if (bibliografiaBasicaRef.invalid && (bibliografiaBasicaRef.dirty || bibliografiaBasicaRef.touched)) {
             <div>
               @if (editForm.get('bibliografiaBasica')?.errors?.required) {
@@ -72,14 +75,14 @@
             jhiTranslate="sistemaEscolarApp.planoEnsino.bibliografiaComplementar"
             >Bibliografia Complementar</label
           >
-          <input
-            type="text"
+          <textarea
             class="form-control"
             name="bibliografiaComplementar"
             id="field_bibliografiaComplementar"
             data-cy="bibliografiaComplementar"
             formControlName="bibliografiaComplementar"
-          />
+            placeholder="Leave a comment here">
+          </textarea>
           @if (bibliografiaComplementarRef.invalid && (bibliografiaComplementarRef.dirty || bibliografiaComplementarRef.touched)) {
             <div>
               @if (editForm.get('bibliografiaComplementar')?.errors?.required) {
@@ -99,14 +102,14 @@
           <label class="form-label" for="field_praticaLaboratorial" jhiTranslate="sistemaEscolarApp.planoEnsino.praticaLaboratorial"
             >Pratica Laboratorial</label
           >
-          <input
-            type="text"
+          <textarea
             class="form-control"
             name="praticaLaboratorial"
             id="field_praticaLaboratorial"
             data-cy="praticaLaboratorial"
             formControlName="praticaLaboratorial"
-          />
+            placeholder="Leave a comment here">
+          </textarea>
           @if (praticaLaboratorialRef.invalid && (praticaLaboratorialRef.dirty || praticaLaboratorialRef.touched)) {
             <div>
               @if (editForm.get('praticaLaboratorial')?.errors?.required) {
@@ -124,7 +127,7 @@
         <div class="mb-3">
           <label class="form-label" for="field_disciplina" jhiTranslate="sistemaEscolarApp.planoEnsino.disciplina">Disciplina</label>
           <select
-            class="form-control"
+            class="form-select"
             id="field_disciplina"
             data-cy="disciplina"
             name="disciplina"
@@ -133,7 +136,7 @@
           >
             <option [ngValue]="null"></option>
             @for (disciplinaOption of disciplinasSharedCollection; track $index) {
-              <option [ngValue]="disciplinaOption">{{ disciplinaOption.id }}</option>
+              <option [ngValue]="disciplinaOption">{{ disciplinaOption.nome }}</option>
             }
           </select>
         </div>
@@ -143,7 +146,7 @@
             >Professor Responsavel</label
           >
           <select
-            class="form-control"
+            class="form-select"
             id="field_professorResponsavel"
             data-cy="professorResponsavel"
             name="professorResponsavel"
@@ -152,7 +155,7 @@
           >
             <option [ngValue]="null"></option>
             @for (professorOption of professorsSharedCollection; track $index) {
-              <option [ngValue]="professorOption">{{ professorOption.id }}</option>
+              <option [ngValue]="professorOption">{{ professorOption.nome }}</option>
             }
           </select>
         </div>

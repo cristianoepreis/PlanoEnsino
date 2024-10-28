@@ -906,7 +906,7 @@
                 <!-- default Spring profiles -->
                 <liquibase-plugin.driver>org.h2.Driver</liquibase-plugin.driver>
                 <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.H2Dialect</liquibase-plugin.hibernate-dialect>
-                <liquibase-plugin.password/>
+              <liquibase-plugin.password>123</liquibase-plugin.password>
                 <liquibase-plugin.url>jdbc:h2:file:${project.build.directory}/h2db/db/sistemaEscolar</liquibase-plugin.url>
                 <liquibase-plugin.username>sistemaEscolar</liquibase-plugin.username>
                 <profile.test>testdev</profile.test>

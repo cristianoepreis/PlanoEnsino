@@ -40,7 +40,7 @@ describe('PlanoEnsino Management Detail Component', () => {
       const instance = await harness.navigateByUrl('/', PlanoEnsinoDetailComponent);
 
       // THEN
-      expect(instance.planoEnsino()).toEqual(expect.objectContaining({ id: 123 }));
+      expect(instance.planoEnsino()).toEqual(expect.objectContaining({ nome: Cristiano Emanoel Pereira Reis }));
     });
   });
 

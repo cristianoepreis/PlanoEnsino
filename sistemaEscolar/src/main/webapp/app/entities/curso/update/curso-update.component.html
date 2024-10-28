@@ -36,7 +36,7 @@
         <div class="mb-3">
           <label for="field_disciplinas" jhiTranslate="sistemaEscolarApp.curso.disciplinas">Disciplinas</label>
           <select
-            class="form-control"
+            class="form-select"
             id="field_disciplinas"
             data-cy="disciplinas"
             multiple
@@ -45,7 +45,7 @@
             [compareWith]="compareDisciplina"
           >
             @for (disciplinaOption of disciplinasSharedCollection; track $index) {
-              <option [ngValue]="disciplinaOption">{{ disciplinaOption.id }}</option>
+              <option [ngValue]="disciplinaOption">{{ disciplinaOption.nome}}</option>
             }
           </select>
         </div>
